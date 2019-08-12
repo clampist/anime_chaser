@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    {% for source in sources %}
+        <li><a href="{% url 'anime-detail' source.target_id %}">{{ source.target.title }}</a> | {{ source.nickname }} : {{ source.content }}</li>
+    {% endfor %}
+
+</ul>
+</body>
+</html>

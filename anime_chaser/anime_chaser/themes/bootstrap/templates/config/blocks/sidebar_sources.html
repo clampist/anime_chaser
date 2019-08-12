@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    {% for source in sources %}
+        <li><a href="{{ source.target }}">{{ source.target.title }}</a> | {{ source.nickname }} : {% autoescape off %}
+            {{ source.content }}
+        {% endautoescape %}
+        </li>
+    {% endfor %}
+
+</ul>
+</body>
+</html>

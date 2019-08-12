@@ -1,0 +1,31 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+ipython = "*"
+v = {editable = true,version = "*"}
+ipdb = "*"
+djdt-flamegraph = "==0.2.12"
+django-debug-toolbar = "==2.0"
+pympler = "==0.5"
+django-debug-toolbar-line-profiler = "==0.6.1"
+django-silk = "==3.0.2"
+
+[packages]
+mistune = "*"
+django = "*"
+xadmin = {editable = true,git = "git://github.com/sshwsfc/xadmin.git",ref = "django2"}
+django-autocomplete-light = "==3.2.10"
+django-ckeditor = "==5.4.0"
+pillow = "==5.1.0"
+djangorestframework = "==3.9.1"
+coreapi = "==2.3.3"
+mysqlclient = "*"
+django-redis = "==4.9.0"
+hiredis = "==0.2.0"
+redis = "==2.10.6"
+
+[requires]
+python_version = "3.6"

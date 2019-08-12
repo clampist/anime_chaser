@@ -1,0 +1,51 @@
+{% extends "./base.html" %}
+{% load source_block %}
+
+{% block title %}
+{{ anime.title }}
+{% endblock %}
+
+{% block main %}
+
+    {% if anime %}
+        <h1>{{ anime.title }}</h1>
+        <div>
+            <span>分类：{{ anime.category.name }}</span>
+            <span>作者：{{ anime.owner.username }}</span>
+        </div>
+        <hr />
+        <p>
+        {% autoescape off %}
+            {{ anime.content_html }}
+        {% endautoescape %}
+        </p>
+    {% endif %}
+
+    {% source_block request.path %}
+
+{#    <hr />#}
+{#    <div class="source">#}
+{#        <form class="form-group" action="/source/" method="POST">#}
+{#            {% csrf_token %}#}
+{#            <input name="target" type="hidden" value="{{ request.path }}"/>#}
+{#            {{ source_form }}#}
+{#            <input type="submit" value="写好了"/>#}
+{#        </form>#}
+
+{#    <!-- 评论列表 -->#}
+{#    <ul class="list-group">#}
+{#        {% for source in source_list %}#}
+{#            <li class="list-group-item">#}
+{#            <div class="nickname">#}
+{#                <a href="{{ source.website }}">{{ source.nickname }}</a>#}
+{#                <span>{{ source.created_time }}</span>#}
+{#            </div>#}
+{#            <div class="source-content">#}
+{#                {{ source.content }}#}
+{#            </div>#}
+{#            </li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+{#    </div>#}
+
+{% endblock %}
